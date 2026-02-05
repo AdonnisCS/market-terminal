@@ -1,13 +1,27 @@
-# Python
+# --- Python (Backend) ---
 __pycache__/
-*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
 venv/
+.venv/
 .env
 
-# Node
+# --- Node.js (Frontend) ---
 node_modules/
+npm-debug.log
+yarn-error.log
 dist/
-.eslintcache
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# System
+# --- OS & Editor Files ---
 .DS_Store
+Thumbs.db
+.vscode/
+.idea/

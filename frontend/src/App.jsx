@@ -75,7 +75,7 @@ function App() {
         activeCandle.low = Math.min(activeCandle.low, price);
         activeCandle.close = price;
         
-        // Force update the last candle in state so it "wiggles" live
+        
         setCandles(prev => {
            const prevCandles = prev[ticker] || [];
            const newHistory = [...prevCandles];
@@ -87,9 +87,9 @@ function App() {
     };
 
     return () => socket.close();
-  }, []); // Note: In a real app, you'd merge this with the history fetcher more tightly
+  }, []); 
 
-  // ... (Keep your Y-Domain logic and Return JSX exactly the same)
+  // ... (Keep Y-Domain logic and Return JSX exactly the same)
   const yDomain = useMemo(() => {
     const data = candles[activeCoin];
     if (!data || data.length === 0) return ['auto', 'auto'];
@@ -195,7 +195,7 @@ function App() {
               />
               <Tooltip contentStyle={{ background: '#0a0b0d', border: '1px solid #1e222d' }} />
               <Area 
-                type="stepAfter" // Makes the history look "blocky" and professional
+                type="stepAfter" // History formatting
                 dataKey="close" 
                 stroke="#fcd535" 
                 strokeWidth={2} 
